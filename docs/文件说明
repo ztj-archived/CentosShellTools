@@ -1,0 +1,27 @@
+阅读本文档前请注意关键词：
+    必须执行
+    重复运行
+    只能运行一次
+
+/data/shell/deploy/inits/init.sh
+    部署初始化文件，为第一次安装必须执行项，本脚本可以重复运行，主要功能为：
+        关闭 SELinux
+        允许数据包转发
+        设置目录
+        安装常用软件
+        设置主机名称
+
+/data/shell/deploy/inits/update-system.sh
+    更新系统，本脚本可以重复运行，主要功能为：更新现有内核和软件。
+
+/data/shell/deploy/inits/setting-autostart.sh
+    设置启动脚本，本脚本只能运行一次，主要功能为：添加启动脚本并设置启动脚本日志。
+        启动脚本：/data/shell/start/auto.sh
+        运行日志：/data/logs/start/auto_datatime.log
+
+/data/shell/deploy/inits/iptables.sh
+    启用 iptables 防火墙，如果安装 Docker 并 IP 地址转发，则需要运行本脚本。
+    主要功能为：启用 iptables 服务，禁用 firewalld 服务。
+
+
+

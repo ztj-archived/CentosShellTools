@@ -1,0 +1,26 @@
+在本软件的开发中，请尽量采用如下的规范：
+
+消息提示与注释说明：
+- 尽量注释脚本的逻辑
+- 逻辑块采用 ### 注释并在结尾换行
+- 消息输出采用 >>>>> 为前缀并加上消息提示前缀
+- 提示输入输出采用 >>> 为前缀
+- 终止脚本执行，提示前缀采用 Error
+- 脚本要继续执行，但是需要用户注意的事项，提示前缀采用 Warning
+
+消息提示示例：
+- echo ">>>>> Error: The software has been installed"
+- echo ">>>>> Error: Cli param <SiteSign(1)> does not set"
+- echo ">>>>> Error: Please enter <Command(1)>(start|stop|restart)"
+- echo ">>>>> Error: the var <ServiceBin> does not exist"
+- echo ">>> params 2 <Path>(FilePath|DirPath)"
+
+脚本头部注释示例：
+###############
+# Name: Demo
+# Params 1: <Command>(start|stop|restart)
+# Params 2: <ServiceConfig>(FilePath|DirPath)
+# author: ZhangTianJie
+# email: ztj1993@gmail.com
+###############
+

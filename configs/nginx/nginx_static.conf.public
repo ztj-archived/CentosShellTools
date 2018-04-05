@@ -1,0 +1,9 @@
+location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|flv|ico)$ {
+    expires 30d;
+    access_log off;
+}
+
+location ~ .*\.(js|css)?$ {
+    expires 7d;
+    access_log off;
+}

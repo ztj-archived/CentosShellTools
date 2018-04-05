@@ -1,0 +1,40 @@
+
+初始化安装部署：
+    curl -sSL https://raw.githubusercontent.com/ztj1993/CentosShellTools/master/shell/deploy/quick/init.sh | sh
+
+升级：
+    curl -sSL https://raw.githubusercontent.com/ztj1993/CentosShellTools/master/shell/deploy/quick/update.sh | sh
+    or
+    /data/shell/deploy/quick/update.sh
+
+初始化部署：
+    /data/shell/deploy/inits/init.sh
+    /data/shell/deploy/inits/update-system.sh
+    /data/shell/deploy/inits/setting-autostart.sh
+    /data/shell/deploy/inits/iptables.sh
+
+Lnamp部署：
+    /data/shell/deploy/installs/nginx.sh
+    /data/shell/deploy/installs/apache.sh
+    /data/shell/deploy/installs/mysql57.sh
+    /data/shell/deploy/installs/php71.sh
+    /data/shell/deploy/installs/phpmyadmin.sh
+    /data/shell/deploy/installs/composer.sh
+
+Docker 部署：
+    /data/shell/deploy/installs/docker.sh
+
+Elasticsearch 部署：
+    /data/shell/deploy/installs/elasticsearch.sh
+    /data/shell/deploy/installs/kibana.sh
+    /data/shell/deploy/installs/go-mysql-elasticsearch.sh
+
+Gogs 部署：
+    /data/shell/deploy/installs/gogs.sh
+    /data/shell/deploy/installs/gogs-initdata.sh DataFilePath
+
+JcsegServer 部署：
+    /data/shell/deploy/installs/jcsegserver.sh
+
+Frp 部署：
+    /data/shell/deploy/installs/frp.sh

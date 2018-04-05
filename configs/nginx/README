@@ -1,0 +1,8 @@
+这个目录用于存放Nginx站点配置文件。
+
+0.conf ----- 默认网站配置文件
+
+nginx_proxy.conf.public ----- 公用 proxy 配置文件
+nginx_static.conf.public ---- 公用 static 配置文件
+vhost_apache.conf.public ---- 公用 nginx to apache 类型站点 配置文件
+vhost_frp.conf.public ------- 公用 frp 远程站点配置文件

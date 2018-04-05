@@ -1,0 +1,24 @@
+这个目录于存放软件安装部署脚本文件。具体示例可以查看 0.template.sh 文件。
+
+部署脚本主要有如下执行流程：
+    ### 引入配置文件
+    ### 命令行参数
+    ### 变量定义
+    ### 判断软件是否已经安装
+    ### 安装前置软件
+    ### 判断软件是否具备安装条件
+    ### 安装软件
+    ### 配置系统
+    ### 配置软件
+    ### 设置开机启动项
+    ### 其他处理
+
+变量定义推荐的名称：
+    rpmSoftwareUrl
+    rpmSoftwareName
+    fileSoftwareVersion
+    fileSoftwareUrl
+    fileSoftwareName
+    fileSoftwarePackagePath
+    SoftwareInstallPath
+    SoftwareConfigPath

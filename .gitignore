@@ -1,0 +1,11 @@
+.idea
+*.stackdump
+*.zip
+*.tar
+*.gz
+/backups
+/bin
+/configs
+/logs
+/wwwroot
+/custom

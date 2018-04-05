@@ -1,0 +1,7 @@
+
+关于 iptables 和 firewalld
+    这两个都是管理内核的 netfilter 的软件，他们只有使用上的区别。
+    由于 Docker 数据包转发等原因，因此 iptables.sh 禁用了 firewalld，启用了 iptables。
+    关联脚本：
+        /data/shell/deploy/inits/iptables.sh
+        /data/shell/start/docker.sh

@@ -1,0 +1,64 @@
+#!/bin/bash
+
+###############
+# Name: GoMysqlElasticsearch service management
+# Params 1: start|stop|restart|status
+# Params 2: config file path
+# author: ZhangTianJie
+# email: ztj1993@gmail.com
+###############
+
+### 定义脚本名称
+ShellName="GoMysqlElasticsearch"
+
+### 定义帮助文本
+if [ "${1}" == "help" ] || [ "${1}" == "" ]; then
+    echo ">>> params 1 <Command>(start|stop|restart|status)"
+    echo ">>> params 2 <ServiceConfig>(FilePath)"
+    exit
+fi
+
+### 定义变量
+Command=${1}
+ServiceConfig="${2}"
+ServiceBin="/data/bin/go/src/github.com/siddontang/go-mysql-elasticsearch/bin/go-mysql-elasticsearch"
+ServiceLog="/data/logs/service/${ShellName}.`date +%Y-%m-%d-%H-%M-%S`.log"
+Pid=`pgrep -f "${ServiceConfig}"`
+
+### 判断变量
+if [ ! -f "${ServiceBin}" ]; then
+    echo ">>>>> Error: the var <ServiceBin> does not exist"
+    exit 0
+fi
+if [ ! -f "${ServiceConfig}" ]; then
+    echo ">>>>> Error: the var <ServiceConfig> does not exist"
+    exit 0
+fi
+
+### 定义方法
+function start(){
+    [ -n "${Pid}" ] && echo ">>>>> Warning: Service has been started" && return 1
+    /bin/su - root -c "${ServiceBin} -config=${ServiceConfig} &" &> ${ServiceLog}
+}
+function stop(){
+    [ -n "${Pid}" ] && kill -9 ${Pid} && Pid=""
+}
+function restart(){
+    stop
+    sleep 3
+    start
+}
+function status(){
+    if [ -n "${Pid}" ]; then
+        echo "1"
+    else
+        echo "0"
+    fi
+}
+
+### 执行方法
+if [ "$(type -t ${Command})" = "function" ] ; then
+    ${Command}
+else
+    echo ">>>>> Error: the var <Command> does not exist"
+fi

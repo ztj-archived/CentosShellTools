@@ -1,0 +1,11 @@
+这个目录用于存放 Frp 配置文件。
+
+default_frps.ini ----- 默认的 frps 配置文件
+    绑定端口：7000
+    管理端口：7500
+default_frpc.ini ----- 默认的 frpc 配置文件
+    远程服务：frp.server
+    远程端口：7000
+    日志文件地址：/data/logs/frp/frpc.log
+    SSH端口：6000
+    HttpProxy端口：6001

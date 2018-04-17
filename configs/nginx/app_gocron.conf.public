@@ -1,0 +1,17 @@
+listen 80;
+
+location / {
+    try_files $uri @gocron;
+}
+
+location /resource/ {
+    alias /data/bin/gocron/public/resource/;
+    expires 1h;
+    access_log off;
+}
+
+location @gocron {
+    proxy_pass http://127.0.0.1:5920;
+    include /data/configs/nginx/nginx_proxy.conf.public;
+    access_log off;
+}

@@ -13,9 +13,7 @@ if [ ! -f "${File}" ] && [ ! -f "${DefaultFile}" ]; then
     exit 1
 fi
 ### 加载文件
+source ${DefaultFile}
 if [ -f "${File}" ]; then
     source ${File}
-else
-    source ${DefaultFile}
 fi
-

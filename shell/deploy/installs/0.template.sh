@@ -11,18 +11,24 @@
 source /data/shell/funs/loadConfigFile.sh softwares
 
 ### 命令行参数
-if [ "${1}" == "help" ] || [ "${1}" == "" ]; then
-    echo ">>> Params 1 <SoftwareVersion>(VersionNumber)"
+if [ "${1}" == "help" ]; then
+    echo ">>>>> params 1: SoftwareVersion"
     exit
 fi
 
 ### 变量定义
 Version="${1}"
 [ -z "${Version}" ] && Version="${Version}"
+Url=""
+PackagePath=""
+InstallPath=""
 
 ### 判断软件是否已经安装
 software -v > /dev/null 2>&1
 [ $? -eq 0 ] && echo ">>>>> Error: The software has been installed" && exit 1
+
+File="File"
+[ -f "${File}" ] && echo ">>>>> Error: The software has been installed" && exit 1
 
 ### 安装前置软件
 /data/shell/funs/yumInstallSoftware.sh java
@@ -34,6 +40,10 @@ software -v > /dev/null 2>&1
 [ $? -ne 0 ] && echo ">>>>> Error: Do not have installation conditions" && exit 1
 
 ### 安装软件
+/data/shell/funs/wget.sh ${Url}
+[ $? -ne 0 ] && exit 1
+mkdir -p ${InstallPath}
+tar -xf ${PackagePath} --strip-components 1 -C ${InstallPath}
 
 ### 验证软件安装
 software -v > /dev/null 2>&1

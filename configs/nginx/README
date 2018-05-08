@@ -2,7 +2,11 @@
 
 0.conf ----- 默认网站配置文件
 
-nginx_proxy.conf.public ----- 公用 proxy 配置文件
-nginx_static.conf.public ---- 公用 static 配置文件
-vhost_apache.conf.public ---- 公用 nginx to apache 类型站点 配置文件
-vhost_frp.conf.public ------- 公用 frp 远程站点配置文件
+nginx_proxy.public ----- 公用 proxy 配置文件
+nginx_static.public ---- 公用 static 配置文件
+vhost_apache.public ---- 公用 nginx to apache 类型站点 配置文件
+vhost_frp.public ------- 公用 frp 远程站点配置文件
+
+app_gocron.public ------ GoCron
+app_gogs.public -------- Gogs
+app_mindoc.public ------ MinDoc

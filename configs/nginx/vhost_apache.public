@@ -8,12 +8,12 @@ location / {
 
 location @apache {
     proxy_pass http://127.0.0.1:81;
-    include /data/configs/nginx/nginx_proxy.conf.public;
+    include /data/configs/nginx/nginx_proxy.public;
 }
 
 location ~ [^/]\.php(/|$) {
     proxy_pass http://127.0.0.1:81;
-    include /data/configs/nginx/nginx_proxy.conf.public;
+    include /data/configs/nginx/nginx_proxy.public;
 }
 
-include /data/configs/nginx/nginx_static.conf.public;
+include /data/configs/nginx/nginx_static.public;

@@ -12,6 +12,6 @@ location /(assets|css|img|js|plugins)/ {
 
 location @gogs {
     proxy_pass http://127.0.0.1:3000;
-    include /data/configs/nginx/nginx_proxy.conf.public;
+    include /data/configs/nginx/nginx_proxy.public;
     access_log off;
 }

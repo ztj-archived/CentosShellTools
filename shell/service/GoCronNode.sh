@@ -12,7 +12,7 @@ ShellName="GoCronNode"
 
 ### 定义帮助文本
 if [ "${1}" == "help" ] || [ "${1}" == "" ]; then
-    echo ">>> params 1 <Command>(start|stop|restart)"
+    echo ">>> params 1 <Command>(start|stop|restart|daemon_start|daemon_stop)"
     exit
 fi
 
@@ -20,7 +20,8 @@ fi
 Command=${1}
 ServiceBin="/data/bin/gocron/gocron-node"
 ServiceLog="/data/logs/service/${ShellName}.`date +%Y-%m-%d-%H-%M-%S`.log"
-Pid=`pgrep -f "${ServiceBin}"`
+PidGetCommand="ps aux | grep -w ${ServiceBin} | grep -v bash | grep -v grep | grep -v daemon | awk '{print $2}'"
+Pid=`eval ${PidGetCommand}`
 
 ### 判断变量
 if [ ! -f "${ServiceBin}" ]; then
@@ -34,12 +35,21 @@ function start(){
     /bin/su - gocron -c "${ServiceBin} &" &> ${ServiceLog}
 }
 function stop(){
-    [ -n "${Pid}" ] && kill -9 ${Pid} && Pid=""
+    [ -n "${Pid}" ] && kill -9 ${Pid} > /dev/null 2>&1
 }
 function restart(){
     stop
     sleep 3
     start
+}
+function daemon_start(){
+    ${0} start
+    /bin/su - root -c "nohup /data/shell/funs/daemon.sh \"${PidGetCommand}\" \"${0} start\" &" &> /dev/null 2>&1
+}
+function daemon_stop(){
+    Tmp=`ps aux | grep -w ${ServiceBin} | grep -w daemon | awk '{print $2}' | sed -n 1p`
+    [ -n "${Tmp}" ] && kill -9 ${Tmp} > /dev/null 2>&1
+    ${0} stop
 }
 
 ### 执行方法

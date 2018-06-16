@@ -1,5 +1,3 @@
-listen 80;
-
 index index.html index.htm index.php;
 
 error_page 404 403 500 502 503 504 /404.html;

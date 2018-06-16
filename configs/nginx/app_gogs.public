@@ -1,5 +1,3 @@
-listen 80;
-
 location / {
     try_files $uri @gogs;
 }

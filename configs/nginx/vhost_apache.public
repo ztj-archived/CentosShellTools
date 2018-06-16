@@ -1,5 +1,3 @@
-listen 80;
-
 index index.html index.htm index.php;
 
 location / {

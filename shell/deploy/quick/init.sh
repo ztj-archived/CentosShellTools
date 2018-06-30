@@ -23,6 +23,7 @@ git config --global user.email "empty@empty"
 git config --global user.name "empty"
 git config --global core.autocrlf false
 git config --global core.safecrlf true
+git config --global core.ignorecase false
 git config --global core.filemode false
 
 ### 克隆文件

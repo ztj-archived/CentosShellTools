@@ -13,8 +13,17 @@ if [ ! -d "/data" ]; then
 fi
 
 ### 进入目录
-git status > /dev/null 2>&1
-[ $? -eq 0 ] && echo ">>>>> Error: The repositories does not exist" && exit 1
+cd /data
+
+### 判断仓库是否完整
+git fsck > /dev/null 2>&1
+[ $? -ne 0 ] && echo ">>>>> Error: The repositories does not exist" && exit 1
+
+### 配置仓库
+git config core.autocrlf false
+git config core.safecrlf true
+git config core.ignorecase false
+git config core.filemode false
 
 ### 贮藏文件
 git stash

@@ -14,6 +14,12 @@ IsTips=${2}
 SoftwarePath="/data/backups/softwares/${SoftwareName}"
 SoftwareLog="/data/logs/deploy/${SoftwareName}.`date +%Y-%m-%d-%H-%M-%S`.log"
 
+### 软件已经安装
+if [ -n "`yum list installed | grep -F ${SoftwareName}.`" ]; then
+    echo ">>>>> Warning: ${SoftwareName} has been installed"
+    exit 0
+fi
+
 ### 安装提示
 if [ "${IsTips}" == "yes" ]; then
     read -p ">>> Whether to install software ${SoftwareName} (y): " IsTips
@@ -21,12 +27,6 @@ if [ "${IsTips}" == "yes" ]; then
         echo ">>>>> Warning: Skipped the ${SoftwareName} installation"
         exit 1
     fi
-fi
-
-### 软件已经安装
-if [ -n "`yum list installed | grep -F ${SoftwareName}.`" ]; then
-    echo ">>>>> Warning: ${SoftwareName} has been installed"
-    exit 0
 fi
 
 ### 软件安装目录不存在时创建目录并下载包

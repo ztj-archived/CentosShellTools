@@ -8,7 +8,7 @@
 
 ### 定义帮助文本
 if [ "${1}" == "help" ] || [ "${1}" == "" ]; then
-    echo ">>> params 1 <DbName>"
+    echo ">>> params 1 <DbName|All>"
     echo ">>> params 2 <SavePath>(DirPath)"
     exit
 fi
@@ -17,6 +17,7 @@ fi
 DbName="${1}"
 SavePath="${2}"
 
+### 判断变量
 if [ "${DbName}" == "" ]; then
     echo ">>>>> Error: the var <DbName> does not exist"
     exit 0
@@ -33,6 +34,12 @@ datetime=`date +%Y-%m-%d-%H-%M-%S`
 source /data/shell/funs/loadConfigFile.sh mysql
 
 #备份数据库
-mysqldump --host="${db_host}" --port="${db_port}" \
-    --user="${db_root_user}" --password="${db_root_pass}" \
-    "${DbName}" | gzip > "${SavePath}/${DbName}.${datetime}.sql.gz"
+if [ "${DbName}" == "All" ]; then
+    mysqldump --host="${db_host}" --port="${db_port}" \
+        --user="${db_root_user}" --password="${db_root_pass}" \
+        --all-databases | gzip > "${SavePath}/${DbName}.${datetime}.sql.gz"
+else
+    mysqldump --host="${db_host}" --port="${db_port}" \
+        --user="${db_root_user}" --password="${db_root_pass}" \
+        "${DbName}" | gzip > "${SavePath}/${DbName}.${datetime}.sql.gz"
+fi

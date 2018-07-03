@@ -8,7 +8,7 @@
 
 ### 定义帮助文本
 if [ "${1}" == "help" ] || [ "${1}" == "" ]; then
-    echo ">>> params 1 <DbName>"
+    echo ">>> params 1 <DbName|All>"
     echo ">>> params 2 <FilePath>"
     exit
 fi
@@ -37,6 +37,11 @@ fi
 source /data/shell/funs/loadConfigFile.sh mysql
 
 #导入数据库文件
-gunzip < ${FilePath} | mysql --host=${db_host} --port=${db_port} \
-    --user=${db_root_user} --password=${db_root_pass} \
-    --database=${DbName}
+if [ "${DbName}" == "All" ]; then
+    gunzip < ${FilePath} | mysql --host=${db_host} --port=${db_port} \
+        --user=${db_root_user} --password=${db_root_pass}
+else
+    gunzip < ${FilePath} | mysql --host=${db_host} --port=${db_port} \
+        --user=${db_root_user} --password=${db_root_pass} \
+        --database=${DbName}
+fi

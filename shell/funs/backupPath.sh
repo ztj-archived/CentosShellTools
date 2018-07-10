@@ -9,16 +9,16 @@
 ###############
 
 ### 定义帮助文本
-if [ "${1}" == "help" ] || [ "${1}" == "" ]; then
+if [ "${1}" == "help" ]; then
     echo ">>> params 1 <OriginalPath>(FilePath)"
     echo ">>> params 2 <TargetPath>(FilePath)"
     exit
 fi
 
 ### 设置变量
-OriginalPath="${1}"
-OriginalName=`basename "${1}"`
-TargetPath="${2}"
+[ -z "${OriginalPath}" ] && OriginalPath="${1}"
+[ -z "${OriginalName}" ] && OriginalName=`basename "${1}"`
+[ -z "${TargetPath}" ] && TargetPath="${2}"
 
 ### 判断目标路径是否存在
 if [ ! -f "${OriginalPath}" ] && [ ! -d "${OriginalPath}" ]; then

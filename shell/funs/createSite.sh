@@ -7,7 +7,7 @@
 ###############
 
 ### 定义帮助文本
-if [ "${1}" == "help" ] || [ "${1}" == "" ]; then
+if [ "${1}" == "help" ]; then
     echo ">>> params 1 <SiteSign>"
     echo ">>> params 2 <SiteRootPath>"
     echo ">>> params 3 <ServerName>"

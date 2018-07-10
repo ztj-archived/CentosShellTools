@@ -10,7 +10,7 @@
 ###############
 
 ### 定义帮助文本
-if [ "${1}" == "help" ] || [ "${1}" == "" ]; then
+if [ "${1}" == "help" ]; then
     echo ">>> params 1 <DbUserName>(String)"
     echo ">>> params 2 <DbUserPwd>(String)"
     echo ">>> params 3 <DbUserHost>(String)"
@@ -18,9 +18,9 @@ if [ "${1}" == "help" ] || [ "${1}" == "" ]; then
 fi
 
 ### 定义变量
-DbUserName="${1}"
-DbUserPwd="${2}"
-DbUserHost="${3}"
+[ -z "${DbUserName}" ] && DbUserName="${1}"
+[ -z "${DbUserPwd}" ] && DbUserPwd="${2}"
+[ -z "${DbUserHost}" ] && DbUserHost="${3}"
 
 ### 判断变量
 if [ ! -n "${DbUserName}" ]; then

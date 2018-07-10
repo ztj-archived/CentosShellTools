@@ -1,0 +1,12 @@
+server {
+    listen 80;
+
+    server_name ${ServerName} ${ServerAlias};
+    root ${SiteRootPath};
+
+    if ($host != ${MainDomain}) {
+        return 301 $scheme://${MainDomain}$request_uri;
+    }
+
+    include /data/configs/nginx/vhost_apache.public;
+}

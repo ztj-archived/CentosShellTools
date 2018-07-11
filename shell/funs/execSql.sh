@@ -8,17 +8,17 @@
 ###############
 
 ### 定义变量
-sql="${1}"
+[ -z "${Sql}" ] && Sql="${1}"
 
 ### 判断变量
-if [ ! -n "${sql}" ]; then
+if [ ! -n "${Sql}" ]; then
     echo ">>> Error: param <SQL(1)> does not set"
     exit 1
 fi
 
 ### 生成导入的语句文件
 tmpfile=`mktemp /tmp/sql.XXX`
-echo "${sql}"> ${tmpfile}
+echo "${Sql}"> ${tmpfile}
 
 ### 执行语句
 source /data/shell/funs/loadConfigFile.sh mysql

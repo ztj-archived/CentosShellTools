@@ -27,5 +27,3 @@ mysql --host=${db_host} --port=${db_port} --user=${db_root_user} --password=${db
 
 ### 删除语句文件
 rm -rf ${tmpfile}
-
-exit 0

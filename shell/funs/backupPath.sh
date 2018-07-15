@@ -23,7 +23,7 @@ fi
 ### 判断目标路径是否存在
 if [ ! -f "${OriginalPath}" ] && [ ! -d "${OriginalPath}" ]; then
     echo ">>>>> Warning: original path does not exist"
-    exit 0
+    exit 1
 fi
 
 ### 设置目标路径
@@ -42,5 +42,3 @@ fi
 DateTime=`date +%Y-%m-%d-%H-%M-%S`
 cp -fR "${OriginalPath}" "${TargetPath}.bak.${DateTime}"
 [ $? -ne 0 ] && echo ">>>>> Error: backup path error" && exit 1
-
-exit 0

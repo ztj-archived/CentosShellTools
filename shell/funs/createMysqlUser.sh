@@ -47,5 +47,3 @@ GRANT ALL PRIVILEGES ON \`${DbUserName}\_%\`.* TO '${DbUserName}'@'${DbUserHost}
 ### 执行语句
 /data/shell/funs/execSql.sh "${sql}"
 [ $? -ne 0 ] && exit 1
-
-exit 0

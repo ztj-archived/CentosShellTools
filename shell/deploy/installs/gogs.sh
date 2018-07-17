@@ -14,7 +14,7 @@ source /data/shell/funs/loadConfigFile.sh softwares
 ### 变量定义
 SoftwareUrl="https://dl.gogs.io/${GogsVersion}/linux_amd64.tar.gz"
 SoftwareName=${SoftwareUrl##*/}
-SoftwarePackagePath="/data/backups/softwares/${SoftwareName}"
+SoftwarePackagePath="/data/backups/packages/${SoftwareName}"
 SoftwareInstallPath="/data/bin/gogs"
 SoftwareConfigPath=""
 

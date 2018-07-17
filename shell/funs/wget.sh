@@ -7,7 +7,7 @@
 ### 变量定义
 SoftwareUrl=${1}
 SoftwareName=${SoftwareUrl##*/}
-SoftwarePath="/data/backups/softwares/${SoftwareName}"
+SoftwarePath="/data/backups/packages/${SoftwareName}"
 SoftwareLog="/data/logs/deploy/${SoftwareName}.`date +%Y-%m-%d-%H-%M-%S`.log"
 
 ### 软件不存在时下载文件

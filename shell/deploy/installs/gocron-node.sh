@@ -20,7 +20,7 @@ fi
 Version="${1}"
 [ -z "${Version}" ] && Version="${GoCronVersion}"
 Url="https://github.com/ouqiang/gocron/releases/download/v${Version}/gocron-node-v${Version}-linux-amd64.tar.gz"
-PackagePath="/data/backups/softwares/gocron-node-v${Version}-linux-amd64.tar.gz"
+PackagePath="/data/backups/packages/gocron-node-v${Version}-linux-amd64.tar.gz"
 InstallPath="/data/bin/gocron"
 
 ### 判断软件是否已经安装

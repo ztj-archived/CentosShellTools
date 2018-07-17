@@ -20,7 +20,7 @@ SoftwareVersion="${1}"
 [ -z "${SoftwareVersion}" ] && SoftwareVersion="${NodejsVersion}"
 SoftwareUrl="https://npm.taobao.org/mirrors/node/v${SoftwareVersion}/node-v${SoftwareVersion}-linux-x64.tar.gz"
 SoftwareName=${SoftwareUrl##*/}
-SoftwarePackagePath="/data/backups/softwares/${SoftwareName}"
+SoftwarePackagePath="/data/backups/packages/${SoftwareName}"
 SoftwareInstallPath="/data/bin/nodejs"
 
 ### 判断软件是否已经安装

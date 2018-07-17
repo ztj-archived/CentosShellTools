@@ -20,7 +20,7 @@ VBoxManage -v > /dev/null 2>&1
 rm -rf /etc/yum.repos.d/virtualbox.repo
 /data/shell/funs/wget.sh https://download.virtualbox.org/virtualbox/rpm/el/virtualbox.repo
 [ $? -ne 0 ] && exit 1
-cp -rf /data/backups/softwares/virtualbox.repo /etc/yum.repos.d/virtualbox.repo
+cp -rf /data/backups/packages/virtualbox.repo /etc/yum.repos.d/virtualbox.repo
 
 /data/shell/funs/yumInstallSoftware.sh gcc
 [ $? -ne 0 ] && exit 1

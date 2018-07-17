@@ -13,7 +13,7 @@
 ### 变量定义
 SoftwareUrl="https://getcomposer.org/composer.phar"
 SoftwareName="composer.phar"
-SoftwarePackagePath="/data/backups/softwares/${SoftwareName}"
+SoftwarePackagePath="/data/backups/packages/${SoftwareName}"
 SoftwareInstallPath="/usr/local/bin/composer"
 
 ### 判断软件是否已经安装

@@ -15,7 +15,7 @@ source /data/shell/funs/loadConfigFile.sh softwares
 SoftwareVersion="${FrpVersion}"
 SoftwareUrl="https://github.com/fatedier/frp/releases/download/v${SoftwareVersion}/frp_${SoftwareVersion}_linux_amd64.tar.gz"
 SoftwareName=${SoftwareUrl##*/}
-SoftwarePackagePath="/data/backups/softwares/${SoftwareName}"
+SoftwarePackagePath="/data/backups/packages/${SoftwareName}"
 SoftwareInstallPath="/data/bin/frp"
 
 ### 判断软件是否已经安装

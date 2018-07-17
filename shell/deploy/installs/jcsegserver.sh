@@ -14,7 +14,7 @@
 SoftwareVersion="2.2.0"
 SoftwareUrl="http://search.maven.org/remotecontent?filepath=org/lionsoul/jcseg-server/${SoftwareVersion}/jcseg-server-${SoftwareVersion}.jar"
 SoftwareName=${SoftwareUrl##*/}
-SoftwarePackagePath="/data/backups/softwares/${SoftwareName}"
+SoftwarePackagePath="/data/backups/packages/${SoftwareName}"
 SoftwareInstallPath="/data/bin/jcseg-server/jcseg-server.jar"
 
 ### 判断软件是否已经安装

@@ -22,7 +22,7 @@ docker -v > /dev/null 2>&1
 rm -rf /etc/yum.repos.d/docker-ce.repo
 /data/shell/funs/wget.sh https://download.docker.com/linux/centos/docker-ce.repo
 [ $? -ne 0 ] && exit 1
-cp -rf /data/backups/softwares/docker-ce.repo /etc/yum.repos.d/docker-ce.repo
+cp -rf /data/backups/packages/docker-ce.repo /etc/yum.repos.d/docker-ce.repo
 
 ### 判断软件是否具备安装条件
 

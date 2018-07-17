@@ -3,7 +3,7 @@
 ### 变量定义
 SoftwareName=${1}
 SoftwareUrl=${2}
-SoftwarePath="/data/backups/softwares/${SoftwareName}.rpm"
+SoftwarePath="/data/backups/packages/${SoftwareName}.rpm"
 SoftwareLog="/data/logs/deploy/${SoftwareName}.`date +%Y-%m-%d-%H-%M-%S`.log"
 
 ### 软件已经安装

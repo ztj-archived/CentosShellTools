@@ -14,7 +14,7 @@ source /data/shell/funs/loadConfigFile.sh softwares
 ### 变量定义
 SoftwareUrl="https://github.com/lifei6671/mindoc/releases/download/v${MinDocVersion}/mindoc_linux_amd64.zip"
 SoftwareName="mindoc_linux_amd64_${MinDocVersion}.zip"
-SoftwarePackagePath="/data/backups/softwares/${SoftwareName}"
+SoftwarePackagePath="/data/backups/packages/${SoftwareName}"
 SoftwareInstallPath="/data/bin/mindoc"
 SoftwareConfigPath=""
 

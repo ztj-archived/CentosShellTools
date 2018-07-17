@@ -27,7 +27,7 @@ SoftwareDir=${2}
 
 SoftwareUrl="https://files.phpmyadmin.net/phpMyAdmin/${SoftwareVersion}/phpMyAdmin-${SoftwareVersion}-all-languages.tar.gz"
 SoftwareName=${SoftwareUrl##*/}
-SoftwarePackagePath="/data/backups/softwares/${SoftwareName}"
+SoftwarePackagePath="/data/backups/packages/${SoftwareName}"
 SoftwareInstallPath="/data/wwwroot/default/${SoftwareDir}"
 
 ### 判断软件是否已经安装

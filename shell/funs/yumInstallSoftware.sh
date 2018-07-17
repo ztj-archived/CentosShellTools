@@ -11,7 +11,7 @@
 ### 变量定义
 SoftwareName=${1}
 IsTips=${2}
-SoftwarePath="/data/backups/softwares/${SoftwareName}"
+SoftwarePath="/data/backups/packages/${SoftwareName}"
 SoftwareLog="/data/logs/deploy/${SoftwareName}.`date +%Y-%m-%d-%H-%M-%S`.log"
 
 ### 软件已经安装

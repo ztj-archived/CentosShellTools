@@ -18,8 +18,8 @@
 脚本头部注释示例：
 ###############
 # Name: Demo
-# Params 1: <Command>(start|stop|restart)
-# Params 2: <ServiceConfig>(FilePath|DirPath)
+# Params 1: <CommandAlias>(start|stop|restart) 命令别名
+# Params 2: <ServiceConfig>(FilePath|DirPath) 服务配置文件路径
 # author: ZhangTianJie
 # email: ztj1993@gmail.com
 ###############

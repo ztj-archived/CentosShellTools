@@ -13,7 +13,6 @@
 - echo ">>>>> Error: Cli param <SiteSign(1)> does not set"
 - echo ">>>>> Error: Please enter <Command(1)>(start|stop|restart)"
 - echo ">>>>> Error: the var <ServiceBin> does not exist"
-- echo ">>> params 2 <Path>(FilePath|DirPath)"
 
 脚本头部注释示例：
 ###############
@@ -24,3 +23,9 @@
 # email: ztj1993@gmail.com
 ###############
 
+帮助文本示例：
+if [ "${1}" == "help" ]; then
+    echo ">>> params 1 <OriginalPath>(FilePath|DirPath) ExplainText"
+    echo ">>> params 2 <TargetPath>(DirPath)"
+    exit
+fi

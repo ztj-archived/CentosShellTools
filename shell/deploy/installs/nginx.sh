@@ -44,7 +44,7 @@ chown -R www.www /data/wwwroot
 mkdir -p /data/configs/nginx
 chown -R www.www /data/configs/nginx
 
-/data/shell/funs/backupPath.sh /etc/nginx/nginx.conf
+/data/shell/funs/pathBackup.sh /etc/nginx/nginx.conf
 sed -i "s@^user.*@user www;@" /etc/nginx/nginx.conf
 grep "/data/configs/nginx" /etc/nginx/conf.d/default.conf > /dev/null
 [ $? -ne 0 ] && echo -e "include /data/configs/nginx/*.conf;" > /etc/nginx/conf.d/default.conf

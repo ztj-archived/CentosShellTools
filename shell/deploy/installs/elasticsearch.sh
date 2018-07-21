@@ -40,14 +40,14 @@ systemctl status elasticsearch.service > /dev/null 2>&1
 
 ### 配置系统
 sysctl -w vm.max_map_count=262144
-/data/shell/funs/backupPath.sh /etc/sysctl.conf
+/data/shell/funs/pathBackup.sh /etc/sysctl.conf
 echo "vm.max_map_count=262144" >> /etc/sysctl.conf
-/data/shell/funs/backupPath.sh /etc/security/limits.conf
+/data/shell/funs/pathBackup.sh /etc/security/limits.conf
 echo "elasticsearch hard nofile 65536" >> /etc/security/limits.conf
 echo "elasticsearch soft nofile 65536" >> /etc/security/limits.conf
 
 ### 配置软件
-/data/shell/funs/backupPath.sh /etc/elasticsearch/elasticsearch.yml
+/data/shell/funs/pathBackup.sh /etc/elasticsearch/elasticsearch.yml
 echo "network.host: 0.0.0.0" >> /etc/elasticsearch/elasticsearch.yml
 
 ### 设置开机启动项

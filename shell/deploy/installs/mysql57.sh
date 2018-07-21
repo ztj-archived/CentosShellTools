@@ -44,7 +44,7 @@ fi
 ### 配置系统
 
 ### 配置软件
-/data/shell/funs/backupPath.sh /etc/my.cnf
+/data/shell/funs/pathBackup.sh /etc/my.cnf
 grep "sql_mode=" /etc/my.cnf > /dev/null
 [ $? -ne 0 ] && echo -e "sql_mode=" >> /etc/my.cnf
 grep "server-id=1" /etc/my.cnf > /dev/null

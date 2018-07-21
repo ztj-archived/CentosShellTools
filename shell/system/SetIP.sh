@@ -30,8 +30,8 @@ if [ ! -f "${NetworkConfigFile}" ]; then
 fi
 
 ### 备份配置文件与还原默认配置文件
-/data/shell/funs/backupPath.sh "${NetworkConfigFile}"
-/data/shell/funs/recoveryOriginalPath.sh "${NetworkConfigFile}"
+/data/shell/funs/pathBackup.sh "${NetworkConfigFile}"
+/data/shell/funs/pathRecovery.sh "${NetworkConfigFile}"
 
 ### 注释原有的配置
 sed -i "s@^BOOTPROTO=@# BOOTPROTO=@" ${NetworkConfigFile}

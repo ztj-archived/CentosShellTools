@@ -62,13 +62,13 @@ id -u www >/dev/null 2>&1
 
 ### 配置软件
 chown -R www.www /var/lib/php/session
-/data/shell/funs/backupPath.sh /etc/php-fpm.d/www.conf
+/data/shell/funs/pathBackup.sh /etc/php-fpm.d/www.conf
 sed -i "s@^listen = 127.0.0.1:9000@listen = /dev/shm/php-cgi.sock@" /etc/php-fpm.d/www.conf
 sed -i "s@^;listen.owner = nobody@listen.owner = www@" /etc/php-fpm.d/www.conf
 sed -i "s@^;listen.group = nobody@listen.group = www@" /etc/php-fpm.d/www.conf
 sed -i "s@^;listen.mode = 0666@listen.mode = 0666@" /etc/php-fpm.d/www.conf
 # 优化 PHP
-/data/shell/funs/backupPath.sh /etc/php.ini
+/data/shell/funs/pathBackup.sh /etc/php.ini
 sed -i 's@^expose_php = On@expose_php = Off@' /etc/php.ini
 sed -i 's@^request_order.*@request_order = "CGP"@' /etc/php.ini
 sed -i 's@^;date.timezone.*@date.timezone = Asia/Shanghai@' /etc/php.ini

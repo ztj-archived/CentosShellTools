@@ -40,7 +40,7 @@ chown -R www.www /data/wwwroot
 mkdir -p /data/configs/apache
 chown -R www.www /data/configs/apache
 # 优化配置文件
-/data/shell/funs/backupPath.sh /etc/httpd/conf/httpd.conf
+/data/shell/funs/pathBackup.sh /etc/httpd/conf/httpd.conf
 sed -i "s@^User apache@User www@" /etc/httpd/conf/httpd.conf
 sed -i "s@^Group apache@Group www@" /etc/httpd/conf/httpd.conf
 sed -i "s/^#ServerName www.example.com:80/ServerName 0.0.0.0:81/" /etc/httpd/conf/httpd.conf

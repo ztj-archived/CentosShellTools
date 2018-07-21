@@ -43,7 +43,7 @@ systemctl status elasticsearch.service > /dev/null 2>&1
 ### 配置系统
 
 ### 配置软件
-/data/shell/funs/backupPath.sh /etc/kibana/kibana.yml
+/data/shell/funs/pathBackup.sh /etc/kibana/kibana.yml
 echo "server.host: 0.0.0.0" >> /etc/kibana/kibana.yml
 
 ### 设置开机启动项

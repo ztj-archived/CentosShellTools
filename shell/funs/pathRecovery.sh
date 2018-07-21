@@ -13,7 +13,7 @@
 if [ "${1}" == "help" ]; then
     echo ">>> params 1 <OriginalPath>(FilePath|DirPath|Required)"
     echo ">>> params 2 <TargetPath>(DirPath)"
-    echo ">>> params 2 <PathAlias>(FileName|DirName)"
+    echo ">>> params 3 <PathAlias>(FileName|DirName)"
     exit
 fi
 

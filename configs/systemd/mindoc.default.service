@@ -1,0 +1,14 @@
+[Unit]
+Description=MinDoc
+After=mariadb.service mysqld.service memcached.service redis.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/data/bin/mindoc
+ExecStart=/data/bin/mindoc/mindoc_linux_amd64
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

@@ -9,10 +9,13 @@
 ###############
 
 ### 变量定义
-SoftwareName=${1}
-IsTips=${2}
+[ -z "${SoftwareName}" ] && SoftwareName=${1}
+[ -z "${IsTips}" ] && IsTips=${2}
 SoftwarePath="/data/backups/packages/${SoftwareName}"
 SoftwareLog="/data/logs/deploy/${SoftwareName}.`date +%Y-%m-%d-%H-%M-%S`.log"
+
+### 处理变量
+[ -n "${GlobalIsTips}" ] && IsTips=${GlobalIsTips}
 
 ### 软件已经安装
 if [ -n "`yum list installed | grep -F ${SoftwareName}.`" ]; then

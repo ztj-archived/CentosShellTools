@@ -22,11 +22,11 @@ chmod -R 700 /data/shell/
 /data/shell/funs/yumInstallSoftware.sh git yes
 
 ### 设置主机名称
-read -p ">>> Please enter the hostname: " hostname
+[ -z "${hostname}" ] && read -p ">>> Please enter the hostname: " hostname
 if [ -n "${hostname}" ]; then
     hostnamectl set-hostname "${hostname}"
 else
-echo ">>>>> Warning: Skipped the hostname settings"
+    echo ">>>>> Warning: Skipped the hostname settings"
 fi
 
 exit 0

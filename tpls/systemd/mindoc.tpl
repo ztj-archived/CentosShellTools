@@ -1,13 +1,13 @@
 [Unit]
-Description=MinDoc
+Description=<%=${SoftwareAlias}.${ConfigAlias}=%>
 After=mariadb.service mysqld.service memcached.service redis.service
 
 [Service]
 Type=simple
 User=root
 Group=root
-WorkingDirectory=/data/bin/mindoc
-ExecStart=/data/bin/mindoc/mindoc_linux_amd64
+WorkingDirectory=<%=${SoftwareInstallPath}=%>
+ExecStart=<%=${SoftwareInstallPath}=%>/mindoc_linux_amd64
 Restart=always
 
 [Install]
